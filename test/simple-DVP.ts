@@ -333,6 +333,12 @@ describe("Simple Atomic DVP test", async () => {
       "Security token quantity of Bnd before DVP : \x1b[93;1m",
       (await register.balanceOf(bnd.getAddress())).toString() + "\x1b[0m"
     );
+    expect(await register.balanceOf(bnd.getAddress())).to.be.equal(1000);
+    expect(await register.balanceOf(investorA.getAddress())).to.be.equal(0);
+    expect(await cash.balanceOf(bnd.getAddress())).to.be.equal(0);
+    expect(await cash.balanceOf(investorA.getAddress())).to.be.equal(
+      1000n * 10n ** 18n
+    );
     console.log("-------- Executing DVP --------");
     await dvp.connect(bnd).approve({
       encryptedMetadaHash: ethers.keccak256(encryptedMetadata),
@@ -367,5 +373,11 @@ describe("Simple Atomic DVP test", async () => {
       "Security token quantity of Seller after DVP : \x1b[93;1m",
       (await register.balanceOf(bnd.getAddress())).toString()
     );
+    expect(await register.balanceOf(bnd.getAddress())).to.be.equal(0);
+    expect(await register.balanceOf(investorA.getAddress())).to.be.equal(1000);
+    expect(await cash.balanceOf(bnd.getAddress())).to.be.equal(
+      1000n * 10n ** 18n
+    );
+    expect(await cash.balanceOf(investorA.getAddress())).to.be.equal(0);
   });
 });
