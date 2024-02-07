@@ -26,3 +26,6 @@ To run tests on MacOS, do the following preliminary step before launching npm ru
 ```
 export NODE_OPTIONS=--openssl-legacy-provider
 ```
+## more on CADMOS.IO
+
+[CADMOS.IO](https://www.cadmos.io/)  is a fullstack solution provider for the digital asset universe.
