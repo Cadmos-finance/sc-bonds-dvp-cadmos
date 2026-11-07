@@ -1,3 +1,7 @@
+# CAST 2023 DvP challenge submission
+
+> **Archived historical submission.** Preserved for reference; this repository is no longer maintained.
+
 # Read our [slides HERE](./Cadmos_CastDVP.pdf) 
 
 Different use cases are possible with our implementation (we implemented the first two) : Simple atomic DvP (cash vs bond), Atomic DvP with forex, broker-intermediated transactions with no capital requirement from the broker, ​compliance module, multi-party trade.
